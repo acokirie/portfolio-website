@@ -1,16 +1,22 @@
 <nav>
 
-	<a href="/">Home</a>
+  <a class="logo" href="/"> ACO </a>
 
-	<a href="/about">About</a>
+  <div class="links">
 
-	<a href="/portfolio">Portfolio</a>
+    <a href="/">Home</a>
 
-	<a href="/writing">Writing</a>
+    <a href="/about">About</a>
 
-	<a href="/resume">Resume</a>
+    <a href="/portfolio">Portfolio</a>
 
-	<a href="/contact">Contact</a>
+    <a href="/writing">Writing</a>
+
+    <a href="/resume">Resume</a>
+
+    <a href="/contact">Contact</a>
+
+  </div>
 
 </nav>
 
@@ -20,6 +26,9 @@ nav{
 
 	display:flex;
 
+  justify-content: space-between;
+  align-items: center;
+
 	gap:2rem;
 
 	padding:1.5rem 2rem;
@@ -28,6 +37,7 @@ nav{
 
 }
 
+
 a{
 
 	text-decoration:none;
@@ -35,6 +45,24 @@ a{
 	color:#333;
 
 	font-weight:600;
+
+}
+.links{
+
+display:flex;
+
+gap:2.5rem;
+
+align-items:center;
+
+}
+.links a{
+
+font-size:.95rem;
+
+font-weight:600;
+
+letter-spacing:.02rem;
 
 }
 
