@@ -1,0 +1,148 @@
+<section class="portfolio">
+
+    <div class="heading">
+
+        <p class="eyebrow">Featured Work</p>
+
+        <h2>Selected Programs & Case Studies</h2>
+
+        <p>
+            A selection of programs demonstrating technical leadership,
+            operational excellence, and measurable business outcomes.
+        </p>
+
+    </div>
+
+    <div class="grid">
+
+        <article class="card">
+
+            <span class="tag">Supply Chain</span>
+
+            <h3>Amazon Fulfillment Optimization</h3>
+
+            <p>
+                Redesigned fulfillment workflows to improve throughput and
+                reduce operational bottlenecks.
+            </p>
+
+            <a href="/portfolio/amazon">
+                Read Case Study →
+            </a>
+
+        </article>
+
+        <article class="card">
+
+            <span class="tag">AI</span>
+
+            <h3>Enterprise AI Program</h3>
+
+            <p>
+                Led cross-functional implementation of AI initiatives across
+                multiple business units.
+            </p>
+
+            <a href="#">
+                Coming Soon →
+            </a>
+
+        </article>
+
+    </div>
+
+</section>
+
+<style>
+
+.portfolio{
+
+margin:6rem 0;
+
+}
+
+.heading{
+
+max-width:700px;
+
+margin-bottom:3rem;
+
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:2rem;
+
+}
+
+.card{
+
+padding:2rem;
+
+border:1px solid #E5E7EB;
+
+border-radius:12px;
+
+transition:.25s;
+
+}
+
+.card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+0 12px 24px rgba(15,23,42,.12),
+0 24px 48px rgba(15,23,42,.08);
+
+}
+
+.tag{
+
+display:inline-block;
+
+padding:.35rem .75rem;
+
+border-radius:999px;
+
+background:#E0F2FE;
+
+color:#0369A1;
+
+font-size:.85rem;
+
+font-weight:600;
+
+margin-bottom:1rem;
+
+}
+
+.card a{
+
+display:inline-block;
+
+margin-top:1rem;
+
+text-decoration:none;
+
+font-weight:600;
+
+color:var(--accent);
+
+}
+
+@media(max-width:900px){
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
