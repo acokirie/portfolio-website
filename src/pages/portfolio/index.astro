@@ -1,0 +1,77 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Portfolio">
+
+<section>
+
+    <p class="eyebrow">Portfolio</p>
+
+    <h1>Case Studies</h1>
+
+    <p>
+        A collection of programs, products, and operational initiatives I've led.
+    </p>
+
+</section>
+
+<section class="grid">
+
+    <a class="card" href="/portfolio/amazon">
+
+        <span>Supply Chain</span>
+
+        <h2>Amazon Fulfillment Optimization</h2>
+
+        <p>
+            Increased operational efficiency through fulfillment network optimization.
+        </p>
+
+    </a>
+
+</section>
+
+<style>
+
+.grid{
+
+display:grid;
+
+gap:2rem;
+
+margin-top:3rem;
+
+}
+
+.card{
+
+display:block;
+
+padding:2rem;
+
+border:1px solid #E5E7EB;
+
+border-radius:12px;
+
+text-decoration:none;
+
+color:inherit;
+
+transition:.25s;
+
+}
+
+.card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+0 12px 24px rgba(15,23,42,.12),
+0 24px 48px rgba(15,23,42,.08);
+
+}
+
+</style>
+
+</Layout>
