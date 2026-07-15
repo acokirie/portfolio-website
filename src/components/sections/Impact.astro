@@ -27,6 +27,11 @@ import Card from "../ui/Card.astro";
   grid-template-columns:repeat(3,1fr);
   gap:var(--space-4);
   margin:var(--space-7) 0;
+
+  /* Color  */
+  --card-border: var(--color-suit-mustard);
+  --card-hover-border: var(--color-suit-mustard-dark);
+
 }
 
 .impact :global(.card){
@@ -37,7 +42,8 @@ import Card from "../ui/Card.astro";
   margin:0;
   font-size:var(--text-2xl);
   font-weight:var(--weight-bold);
-  color:var(--navy);
+  /* color:var(--navy); */
+  color: var(--color-suit-mustard-dark);
 }
 
 .impact p{

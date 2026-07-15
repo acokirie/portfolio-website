@@ -1,148 +1,84 @@
+---
+import SectionHeader from "../ui/SectionHeader.astro";
+import CaseStudyCard from "../ui/CaseStudyCard.astro";
+import Button from "../ui/Button.astro";
+---
+
 <section class="portfolio">
 
-    <div class="heading">
+  <SectionHeader
+    eyebrow="Portfolio"
+    title="Selected Program Leadership"
+    description="Enterprise programs spanning operations, supply chain, fulfillment, and technology."
+  />
 
-        <p class="eyebrow">Featured Work</p>
+  <div class="grid">
 
-        <h2>Selected Programs & Case Studies</h2>
+    <CaseStudyCard
+      company="Amazon"
+      title="Fulfillment Network Optimization"
+      summary="Improved throughput, execution consistency, and operational performance across a high-volume fulfillment environment."
+      href="/portfolio/amazon"
+      metrics={["Operations","Supply Chain","Analytics"]}
+    />
 
-        <p>
-            A selection of programs demonstrating technical leadership,
-            operational excellence, and measurable business outcomes.
-        </p>
+    <CaseStudyCard
+      company="Lowe's"
+      title="Transportation Performance Improvement"
+      summary="Reduced execution risk through KPI governance, planning optimization, and transportation process improvements."
+      href="/portfolio/lowes"
+      metrics={["Transportation","Planning","KPIs"]}
+    />
 
-    </div>
+    <CaseStudyCard
+      company="Walmart"
+      title="Operational Excellence"
+      summary="Led cross-functional initiatives focused on execution quality, workforce performance, and customer outcomes."
+      href="/portfolio/walmart"
+      metrics={["Leadership","Operations","Execution"]}
+    />
 
-    <div class="grid">
+  </div>
 
-        <article class="card">
-
-            <span class="tag">Supply Chain</span>
-
-            <h3>Amazon Fulfillment Optimization</h3>
-
-            <p>
-                Redesigned fulfillment workflows to improve throughput and
-                reduce operational bottlenecks.
-            </p>
-
-            <a href="/portfolio/amazon">
-                Read Case Study →
-            </a>
-
-        </article>
-
-        <article class="card">
-
-            <span class="tag">AI</span>
-
-            <h3>Enterprise AI Program</h3>
-
-            <p>
-                Led cross-functional implementation of AI initiatives across
-                multiple business units.
-            </p>
-
-            <a href="#">
-                Coming Soon →
-            </a>
-
-        </article>
-
-    </div>
+  <div class="cta">
+    <Button href="/portfolio" variant="secondary">
+      View All Case Studies
+    </Button>
+  </div>
 
 </section>
 
 <style>
-
 .portfolio{
+  background:var(--slate-50);
 
-margin:6rem 0;
+  width:100vw;
+  margin-left:50%;
+  transform:translateX(-50%);
 
-}
-
-.heading{
-
-max-width:700px;
-
-margin-bottom:3rem;
-
+  padding:var(--space-7) 0;
 }
 
 .grid{
+  width:min(var(--container),calc(100% - 3rem));
+  margin:0 auto;
 
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:2rem;
-
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:var(--space-4);
 }
 
-.card{
-
-padding:2rem;
-
-border:1px solid #E5E7EB;
-
-border-radius:12px;
-
-transition:.25s;
-
+.cta{
+  margin-top:var(--space-6);
+  display:flex;
+  justify-content:center;
 }
 
-.card:hover{
+@media (max-width:900px){
 
-transform:translateY(-6px);
-
-box-shadow:
-0 12px 24px rgba(15,23,42,.12),
-0 24px 48px rgba(15,23,42,.08);
+  .grid{
+    grid-template-columns:1fr;
+  }
 
 }
-
-.tag{
-
-display:inline-block;
-
-padding:.35rem .75rem;
-
-border-radius:999px;
-
-background:#E0F2FE;
-
-color:#0369A1;
-
-font-size:.85rem;
-
-font-weight:600;
-
-margin-bottom:1rem;
-
-}
-
-.card a{
-
-display:inline-block;
-
-margin-top:1rem;
-
-text-decoration:none;
-
-font-weight:600;
-
-color:var(--accent);
-
-}
-
-@media(max-width:900px){
-
-.grid{
-
-grid-template-columns:1fr;
-
-}
-
-}
-
 </style>

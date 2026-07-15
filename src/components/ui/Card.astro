@@ -1,14 +1,29 @@
-<div class="card">
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+
+<div class={`card ${className}`}>
   <slot />
 </div>
 
 <style>
-.card {
-  padding: var(--space-4);
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+.card{
+  padding:var(--space-4);
+
+  display:flex;
+  flex-direction:column;
+
+  background: var(--card-bg, var(--white));
+  color: var(--card-text-color, var(--navy));
+  border: 1px solid var(--card-border, var(--border));
+
+  border-radius:var(--radius-lg);
+
+  box-shadow:var(--shadow-sm);
 
   transition:
     transform var(--transition),
@@ -16,9 +31,11 @@
     border-color var(--transition);
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--color-suit-mustard);
+.card:hover{
+  transform:translateY(-6px);
+
+  box-shadow:var(--shadow-lg);
+
+    border-color: var(--card-hover-border, var(--blue));
 }
 </style>
