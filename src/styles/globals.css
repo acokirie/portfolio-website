@@ -35,13 +35,14 @@ body{
 
 }
 
-main{
+main {
 
-    width:min(var(--container),calc(100% - 3rem));
-
-    margin:auto;
+    width: min(var(--container), calc(100% - 3rem));
+    margin: auto;
+    padding-top: 5.5rem; /* clears the collapsed/scrolled nav height */
 
 }
+
 
 section{
 
