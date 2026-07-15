@@ -21,6 +21,24 @@
   --slate-600: #475569;
   --slate-900: #0F172A;
 
+    /* ===========================
+     Brown Color Palette
+  =========================== */
+
+   /* Suit — mustard/gold */
+  --color-suit-mustard: #E18C1C;       /* base/midtone */
+  --color-suit-mustard-light: #F49E24; /* highlight */
+  --color-suit-mustard-dark: #C97916;  /* shadow */
+
+  /* Backdrop — warm taupe to brown vignette */
+  --color-backdrop-light: #D0B5A0;     /* glow near subject */
+  --color-backdrop-dark: #49392B;      /* corner/edge brown */
+
+  /* Hair — brown tones */
+  --color-hair-base: #5C4331;          /* midtone brown */
+  --color-hair-light: #C47D57;         /* lit strands */
+  --color-hair-dark: #2A211C;          /* roots/shadow */
+
   /* ===========================
      Typography
   =========================== */
