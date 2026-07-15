@@ -13,9 +13,10 @@ const {
 ---
 
 <a
-  href={href}
-  target={target}
-  class={`btn ${variant}`}
+ href={href}
+ target={target}
+ rel={target === "_blank" ? "noopener noreferrer" : undefined}
+ class={`btn ${variant}`}
 >
   <slot />
 </a>
@@ -59,12 +60,12 @@ const {
 
 .secondary{
   background:var(--white);
-  color:var(--color-suit-mustard-dark);
+  color:var(--btn-color, --color-suit-mustard-dark);
   border:1px solid var(--border);
 }
 
 .secondary:hover{
-  border-color:var(--color-suit-mustard-dark);
+  border-color:var(--btn-color-hover, --color-suit-mustard-dark);
   box-shadow:var(--shadow-sm);
 }
 </style>

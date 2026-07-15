@@ -1,16 +1,28 @@
 ---
 interface Props {
-  eyebrow?: string;
-  title: string;
-  description?: string;
+
+eyebrow?:string;
+
+title:string;
+
+description?:string;
+
+align?: "center" | "left";
+
 }
 
-const { eyebrow, title, description } = Astro.props;
+const {
+ eyebrow,
+ title,
+ description,
+ align="center"
+}=Astro.props;
+
 ---
 
-<div class="section-header">
+<div class={`section-header ${align}`}>
 
-  {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+  <!-- {eyebrow && <p class="eyebrow">{eyebrow}</p>}  No need for it -->
 
   <h2>{title}</h2>
 
@@ -22,7 +34,7 @@ const { eyebrow, title, description } = Astro.props;
 .section-header{
   max-width:700px;
   margin:0 auto var(--space-6);
-  text-align:center;
+  /* text-align:center; */
 }
 
 .eyebrow{
@@ -46,5 +58,20 @@ h2{
   color:var(--muted);
   font-size:var(--text-md);
   line-height:1.7;
+}
+
+.center{
+
+margin-left:auto;
+margin-right:auto;
+text-align:center;
+
+}
+
+
+.left{
+
+text-align:left;
+
 }
 </style>
