@@ -1,59 +1,109 @@
 :root {
-  /* Brand */
+
+  /* ===========================
+     Brand
+  =========================== */
+
   --navy: #0F172A;
   --blue: #2563EB;
   --cyan: #0EA5E9;
 
-  /* Neutrals */
+  /* ===========================
+     Neutral Palette
+  =========================== */
+
   --white: #FFFFFF;
+
   --slate-50: #F8FAFC;
   --slate-100: #F1F5F9;
   --slate-200: #E2E8F0;
+  --slate-300: #CBD5E1;
+  --slate-600: #475569;
   --slate-900: #0F172A;
 
-  /* Text */
+  /* ===========================
+     Typography
+  =========================== */
+
   --text: #111827;
   --muted: #6B7280;
 
-  /* Semantic */
+  /* ===========================
+     Borders
+  =========================== */
+
+  --border: #E5E7EB;
+
+  /* ===========================
+     Semantic Colors
+  =========================== */
+
   --success: #16A34A;
   --warning: #D97706;
   --danger: #DC2626;
 
-  /* Borders */
-  --border: #E5E7EB;
+  /* ===========================
+     Gradients
+  =========================== */
 
-  /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
-  --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.08);
-  --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.12);
+  --gradient-primary:
+    linear-gradient(
+      135deg,
+      #2563EB,
+      #0EA5E9
+    );
 
-  /* Radius */
+  --gradient-subtle:
+    linear-gradient(
+      180deg,
+      #FFFFFF,
+      #F8FAFC
+    );
+
+  /* ===========================
+     Shadows
+  =========================== */
+
+  --shadow-sm:
+    0 4px 10px rgba(15,23,42,.06);
+
+  --shadow-md:
+    0 12px 32px rgba(15,23,42,.08);
+
+  --shadow-lg:
+    0 24px 60px rgba(15,23,42,.14);
+
+  /* ===========================
+     Radius
+  =========================== */
+
   --radius-sm: 8px;
-  --radius-md: 16px;
+  --radius-md: 14px;
   --radius-lg: 24px;
+  --radius-xl: 32px;
 
-  /* Spacing */
+  /* ===========================
+     Spacing
+  =========================== */
+
   --space-1: .5rem;
   --space-2: 1rem;
-  --space-3: 2rem;
-  --space-4: 4rem;
-  --space-5: 6rem;
-  --space-6: 8rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 5rem;
+  --space-7: 7rem;
 
-  /* Container */
+  /* ===========================
+     Layout
+  =========================== */
+
   --container: 1200px;
 
-/* Gradients */
---gradient-primary: linear-gradient(
-  135deg,
-  #2563EB 0%,
-  #0EA5E9 100%
-);
+  /* ===========================
+     Motion
+  =========================== */
 
---gradient-subtle: linear-gradient(
-  180deg,
-  #FFFFFF 0%,
-  #F8FAFC 100%
-);
+  --transition-fast: .2s ease;
+  --transition: .3s ease;
 }
