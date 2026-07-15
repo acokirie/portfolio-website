@@ -1,108 +1,54 @@
+---
+import Card from "../ui/Card.astro";
+---
+
 <section class="impact">
 
-  <div class="card">
+    <Card>
     <h2>$12M+</h2>
     <p>Operational Value Created</p>
-  </div>
+  </Card>
 
-  <div class="card">
+  <Card>
     <h2>20+</h2>
     <p>Enterprise Programs Led</p>
-  </div>
+  </Card>
 
-  <div class="card">
-    <h2>Fortune 500</h2>
-    <p>Amazon • Walmart • Lowe's </p>
-  </div>
+  <Card>
+    <h2>120</h2>
+    <p>Associates Led</p>
+  </Card>
 
 </section>
 
 <style>
-
 .impact{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:2rem;
-
-    margin:5rem 0;
-
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:var(--space-4);
+  margin:var(--space-7) 0;
 }
 
-.card{
-
-    padding:2rem;
-
-    border:1px solid #E5E7EB;
-
-    border-radius:12px;
-
-    background:var(--background);
-
-    color:var(--text);
-
-    text-align:center;
-
-    transition:
-        background-color .25s ease,
-        color .25s ease,
-        transform .25s ease,
-        box-shadow .25s ease,
-        border-color .25s ease;
-
+.impact :global(.card){
+  text-align:center;
 }
 
-.card h2{
-
-    font-size:2.5rem;
-
-    margin:0;
-
-    color:inherit;
-
+.impact h2{
+  margin:0;
+  font-size:var(--text-2xl);
+  font-weight:var(--weight-bold);
+  color:var(--navy);
 }
 
-.card p{
-
-    margin-top:1rem;
-
-    color:inherit;
-
-    line-height:1.6;
-
-    opacity:.8;
-
+.impact p{
+  margin-top:.75rem;
+  color:var(--muted);
+  font-size:var(--text-md);
 }
-
-.card:hover{
-
-    background:var(--accent);
-
-    color:white;
-
-    border-color:var(--accent);
-
-
-    transform:translateY(-8px) scale(1.02);
-
-    box-shadow:
-        0 12px 24px var(--shadow1),
-        0 24px 48px var(--shadow2);
-
-    cursor:pointer;
-
-}
-
 
 @media (max-width:900px){
-
-    .impact{
-
-        grid-template-columns:1fr;
-
-    }
-
+  .impact{
+    grid-template-columns:1fr;
+  }
 }
 </style>

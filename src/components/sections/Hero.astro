@@ -30,14 +30,14 @@ import Container from "../ui/Container.astro";
         <div class="actions">
 
           <Button href="/portfolio">
-            View Portfolio
+            Portfolio
           </Button>
 
           <Button
             href="/resume"
             variant="secondary"
           >
-            View Resume
+            Resume
           </Button>
 
         </div>
@@ -63,8 +63,10 @@ import Container from "../ui/Container.astro";
 
 .hero {
   position: relative;
-  padding: 7rem 0;
   overflow: hidden;
+  padding: 7rem 0;   /* existing padding still gives generous top space */
+  margin-top: -5.5rem;   /* pull back up under the nav */
+ 
   background: var(--gradient-subtle-cream);
   /* background: var(--color-backdrop-dark); */
 
@@ -135,7 +137,8 @@ h1 {
 .actions {
   display: flex;
 
-  gap: 1rem;
+  gap: 1.25rem; /* breathing room */
+  margin-top:2.5rem;
 
   flex-wrap: wrap;
 }

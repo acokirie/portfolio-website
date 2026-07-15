@@ -88,6 +88,14 @@
       #0EA5E9
     );
 
+   --gradient-secondary:
+    linear-gradient(
+      135deg, 
+      #E18C1C,
+      #f5b256
+         
+    );
+
   --gradient-subtle:
     linear-gradient(
       180deg,
