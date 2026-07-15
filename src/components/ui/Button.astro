@@ -1,95 +1,60 @@
 ---
 interface Props {
-    href: string;
-    variant?: "primary" | "secondary";
+  href: string;
+  variant?: "primary" | "secondary";
+  target?: string;
 }
 
 const {
-    href,
-    variant = "primary"
+  href,
+  variant = "primary",
+  target = "_self"
 } = Astro.props;
 ---
 
 <a
-    href={href}
-    class={`button ${variant}`}
+  href={href}
+  target={target}
+  class={`btn ${variant}`}
 >
-    <slot />
+  <slot />
 </a>
 
 <style>
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-.button{
+  padding: .9rem 1.6rem;
 
-    display:inline-flex;
+  border-radius: var(--radius-md);
 
-    align-items:center;
+  font-weight: 600;
+  font-size: .95rem;
 
-    justify-content:center;
+  transition: all .2s ease;
 
-    padding:.9rem 1.6rem;
-
-    border-radius:10px;
-
-    text-decoration:none;
-
-    font-weight:600;
-
-    transition:
-        background-color .25s ease,
-        color .25s ease,
-        transform .25s ease,
-        box-shadow .25s ease,
-        border-color .25s ease;
-
+  cursor: pointer;
 }
 
-.primary{
-
-    background:var(--primary);
-
-    color:white;
-
-    border:1px solid var(--primary);
-
+.primary {
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow: var(--shadow-md);
 }
 
-.primary:hover{
-
-    background:var(--accent);
-
-    border-color:var(--accent);
-
-    transform:translateY(-3px);
-
-    box-shadow:
-        0 12px 24px rgba(15,23,42,.12),
-        0 24px 48px rgba(15,23,42,.08);
-
+.primary:hover {
+  transform: translateY(-2px);
 }
 
-.secondary{
-
-    background:white;
-
-    color:var(--primary);
-
-    border:1px solid var(--primary);
-
+.secondary {
+  background: white;
+  color: var(--navy);
+  border: 1px solid var(--border);
 }
 
-.secondary:hover{
-
-    background:var(--primary);
-
-    color:white;
-
-    transform:translateY(-3px);
-
-    box-shadow:
-        0 12px 24px rgba(15,23,42,.12),
-        0 24px 48px rgba(15,23,42,.08);
-
+.secondary:hover {
+  background: var(--slate-50);
 }
-
 </style>

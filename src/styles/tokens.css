@@ -1,0 +1,59 @@
+:root {
+  /* Brand */
+  --navy: #0F172A;
+  --blue: #2563EB;
+  --cyan: #0EA5E9;
+
+  /* Neutrals */
+  --white: #FFFFFF;
+  --slate-50: #F8FAFC;
+  --slate-100: #F1F5F9;
+  --slate-200: #E2E8F0;
+  --slate-900: #0F172A;
+
+  /* Text */
+  --text: #111827;
+  --muted: #6B7280;
+
+  /* Semantic */
+  --success: #16A34A;
+  --warning: #D97706;
+  --danger: #DC2626;
+
+  /* Borders */
+  --border: #E5E7EB;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.12);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  /* Spacing */
+  --space-1: .5rem;
+  --space-2: 1rem;
+  --space-3: 2rem;
+  --space-4: 4rem;
+  --space-5: 6rem;
+  --space-6: 8rem;
+
+  /* Container */
+  --container: 1200px;
+
+/* Gradients */
+--gradient-primary: linear-gradient(
+  135deg,
+  #2563EB 0%,
+  #0EA5E9 100%
+);
+
+--gradient-subtle: linear-gradient(
+  180deg,
+  #FFFFFF 0%,
+  #F8FAFC 100%
+);
+}

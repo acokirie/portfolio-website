@@ -1,165 +1,156 @@
+---
+import Button from "../ui/Button.astro";
+import Container from "../ui/Container.astro";
+---
+
 <section class="hero">
 
-  <div class="content">
+  <Container>
 
-    <p class="eyebrow">
-      Technical Program Manager • AI • Supply Chain • Operations
-    </p>
+    <div class="grid">
 
-    <h1>
-      Leading complex programs that 
-      deliver measurable business impact.
-    </h1>
+      <div class="content">
 
-    <p class="description">
-      I help organizations transform complex operational challenges into scalable, measurable results by leading cross-functional technical programs across Fortune 500 companies.
-    </p>
+        <p class="eyebrow">
+          Senior Program Manager • Technical Program Manager
+        </p>
 
-    <div class="buttons">
+        <h1>
+          Building enterprise systems that scale operations,
+          technology, and business transformation.
+        </h1>
 
-      <a class="primary" href="/portfolio">
-        View Portfolio
-      </a>
+        <p class="lead">
+          PMP, CSM, and MBA leader with experience across Amazon,
+          Lowe's, Walmart, and Procter & Gamble, delivering complex
+          programs that improve operational performance, reduce cost,
+          and enable enterprise growth.
+        </p>
 
-      <a class="secondary" href="/resume">
-        Download Resume
-      </a>
+        <div class="actions">
+
+          <Button href="/portfolio">
+            View Portfolio
+          </Button>
+
+          <Button
+            href="/resume"
+            variant="secondary"
+          >
+            View Resume
+          </Button>
+
+        </div>
+
+      </div>
+
+      <div class="portrait">
+
+        <img
+          src="/images/adaku-headshot.png"
+          alt="Adaku Okirie"
+        />
+
+      </div>
 
     </div>
 
-  </div>
+  </Container>
 
 </section>
 
 <style>
+.hero {
+  position: relative;
+  padding: 7rem 0;
+  overflow: hidden;
+  background: var(--gradient-subtle);
+}
 
-.hero{
+.hero::before {
+  content: "";
 
-padding:6rem 0;
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(circle at top right,
+      rgba(37,99,235,.12),
+      transparent 45%);
+}
+
+.grid {
+  position: relative;
+
+  display: grid;
+
+  gap: 5rem;
+
+  align-items: center;
+
+  grid-template-columns: 1.2fr .8fr;
+}
+
+.eyebrow {
+  color: var(--blue);
+
+  text-transform: uppercase;
+
+  font-weight: 700;
+
+  letter-spacing: .12rem;
+
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: clamp(3rem, 6vw, 4.8rem);
+
+  line-height: 1.05;
+
+  margin-bottom: 2rem;
+
+  color: var(--navy);
+}
+
+.lead {
+  font-size: 1.2rem;
+
+  color: var(--muted);
+
+  max-width: 42rem;
+
+  margin-bottom: 2.5rem;
+}
+
+.actions {
+  display: flex;
+
+  gap: 1rem;
+
+  flex-wrap: wrap;
+}
+
+.portrait img {
+  border-radius: 24px;
+
+  box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 900px) {
+
+.grid{
+
+grid-template-columns:1fr;
 
 }
 
-.content{
+.portrait{
 
-max-width:720px;
-
-}
-
-.eyebrow{
-
-text-transform:uppercase;
-
-letter-spacing:.1rem;
-
-color:#0EA5E9;
-
-font-weight:700;
+order:-1;
 
 }
 
-h1{
-
-font-size:4rem;
-
-line-height:1.1;
-
-margin:.5rem 0;
-
 }
-
-.description{
-
-font-size:1.25rem;
-
-line-height:1.7;
-
-margin:2rem 0;
-
-}
-
-.buttons{
-
-display:flex;
-
-gap:1rem;
-
-}
-
-.primary{
-
-background:var(--primary);
-
-color:white;
-
-padding:1rem 1.5rem;
-
-text-decoration:none;
-
-border-radius:.5rem;
-
-border:1px solid var(--primary);
-
-transition:
-    background-color .25s ease,
-    border-color .25s ease,
-    transform .25s ease,
-    box-shadow .25s ease;
-
-}
-
-.secondary{
-
-padding:1rem 1.5rem;
-
-border-radius:.5rem;
-
-border:1px solid var(--primary);
-
-background:white;
-
-color:var(--primary);
-
-text-decoration:none;
-
-
-transition:
-    background-color .25s ease,
-    color .25s ease,
-    border-color .25s ease,
-    transform .25s ease,
-    box-shadow .25s ease;
-
-}
-
-
-.primary:hover{
-
-    background:var(--accent);
-
-    border-color:var(--accent);
-
-    transform:translateY(-3px);
-
-    box-shadow:
-        0 8px 16px var(--shadow1),
-        0 16px 32px var(--shadow2);
-
-}
-
-.secondary:hover{
-
-    /* background:var(--primary); */
-
-    color: var(--accent);
-
-    border-color:var(--accent);
-
-    transform:translateY(-3px);
-
-    box-shadow:
-        0 8px 16px var(--shadow1),
-        0 16px 32px var(--shadow2);
-
-}
-
 </style>
