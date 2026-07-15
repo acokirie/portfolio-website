@@ -1,0 +1,92 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const caseStudies = await getCollection("case-studies");
+
+  return caseStudies.map((study) => ({
+    params: {
+      slug: study.slug,
+    },
+    props: {
+      study,
+    },
+  }));
+}
+
+const { study } = Astro.props;
+
+const { Content } = await render(study);
+---
+
+<Layout
+  title={`${study.data.title} | Portfolio`}
+  description={study.data.summary}
+>
+
+<article class="case-study">
+
+  <header>
+
+    <p class="eyebrow">
+      {study.data.company}
+    </p>
+
+    <h1>
+      {study.data.title}
+    </h1>
+
+    <p class="summary">
+      {study.data.summary}
+    </p>
+
+  </header>
+
+  <Content />
+
+</article>
+
+</Layout>
+
+<style>
+
+.case-study{
+
+max-width:850px;
+margin:auto;
+padding:5rem 0;
+
+}
+
+.eyebrow{
+
+text-transform:uppercase;
+letter-spacing:.15rem;
+font-size:.8rem;
+font-weight:700;
+color:#0EA5E9;
+
+margin-bottom:1rem;
+
+}
+
+h1{
+
+font-size:clamp(2.5rem,5vw,4rem);
+
+margin-bottom:1.5rem;
+
+}
+
+.summary{
+
+font-size:1.2rem;
+
+color:#6B7280;
+
+margin-bottom:4rem;
+
+}
+
+</style>
