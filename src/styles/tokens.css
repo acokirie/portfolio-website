@@ -95,6 +95,13 @@
       #F8FAFC
     );
 
+     --gradient-subtle-cream:
+    linear-gradient(
+      125deg,
+      #FFFFFF,
+      #fbebde
+    );
+
   /* ===========================
      Shadows
   =========================== */
