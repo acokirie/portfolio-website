@@ -60,11 +60,17 @@ import Container from "../ui/Container.astro";
 </section>
 
 <style>
+
 .hero {
   position: relative;
   padding: 7rem 0;
   overflow: hidden;
   background: var(--gradient-subtle);
+
+  /* full-bleed: break out of any parent container */
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 .hero::before {
@@ -74,10 +80,10 @@ import Container from "../ui/Container.astro";
 
   inset: 0;
 
-  background:
+  /* background:
     radial-gradient(circle at top right,
       rgba(37,99,235,.12),
-      transparent 45%);
+      transparent 45%); */
 }
 
 .grid {
@@ -117,7 +123,7 @@ h1 {
 .lead {
   font-size: 1.2rem;
 
-  color: var(--muted);
+  /* color: var(--muted); */
 
   max-width: 42rem;
 
