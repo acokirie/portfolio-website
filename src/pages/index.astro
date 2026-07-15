@@ -1,14 +1,33 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
-import Impact from "../components/Impact.astro";
-import FeaturedPortfolio from "../components/FeaturedPortfolio.astro";
 
+import Navigation from "../components/sections/Navigation.astro";
+import Hero from "../components/sections/Hero.astro";
+import Impact from "../components/sections/Impact.astro";
+import FeaturedPortfolio from "../components/sections/FeaturedPortfolio.astro";
+import FeaturedWriting from "../components/sections/FeaturedWriting.astro";
+import Footer from "../components/sections/Footer.astro";
 ---
 
-<Layout title="Adaku Okirie">
+<Layout
+  title="Adaku Okirie | Senior Program Manager"
+  description="Senior Program Manager specializing in Technical Programs, AI, Supply Chain, and Enterprise Operations."
+>
+
+<Navigation />
+
+<main>
 
   <Hero />
+
   <Impact />
+
   <FeaturedPortfolio />
+
+  <FeaturedWriting />
+
+</main>
+
+<Footer />
+
 </Layout>
