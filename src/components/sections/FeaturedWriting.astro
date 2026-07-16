@@ -1,114 +1,70 @@
 ---
 import { getCollection } from "astro:content";
-
 import SectionHeader from "../ui/SectionHeader.astro";
-import Card from "../ui/Card.astro";
+import WritingCard from "../ui/WritingCard.astro";
 import Button from "../ui/Button.astro";
 
-
-const posts = await getCollection("blog", ({data}) => {
-
-  return (
-    data.featured === true &&
-    data.draft === false
-  );
-
+const posts = await getCollection("blog", ({ data }) => {
+  return data.featured === true && data.draft === false;
 });
 
-
 const featuredPosts = posts
-.sort(
-(a,b)=>b.data.date.valueOf() - a.data.date.valueOf()
-)
-.slice(0,3);
-
-// const posts = await getCollection("blog");
-
-console.log(posts);
-
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
 ---
 
-<div class="grid">
+<section class="featured-writing full-bleed">
+  <div class="container">
+    <SectionHeader
+      title="Featured Writing"
+      description="Thoughts on program management, operations, and enterprise systems."
+      align="center"
+    />
 
-{
-featuredPosts.map((post)=> (
+    <div class="grid">
+      {featuredPosts.map((post) => (
+        <WritingCard
+          category={post.data.category}
+          title={post.data.title}
+          summary={post.data.description}
+          tags={post.data.tags}
+          cover={post.data.cover}
+          href={`/writing/${post.id}`}
+        />
+      ))}
+    </div>
 
-<Card>
-
-<p class="category">
-{post.data.category}
-</p>
-
-
-<h3>
-{post.data.title}
-</h3>
-
-
-<p class="summary">
-{post.data.description}
-</p>
-
-
-<div class="tags">
-
-{
-post.data.tags.map(tag => (
-
-<span>
-{tag}
-</span>
-
-))
-}
-
-</div>
-
-
-<a 
-href={`/writing/${post.slug}`}
-class="link"
->
-Read Article →
-</a>
-
-
-</Card>
-
-))
-}
-
-</div>
+    <div class="cta">
+      <Button href="/writing" variant="tertiary">View All Articles →</Button>
+    </div>
+  </div>
+</section>
 
 <style>
+  .featured-writing {
+    background: var(--slate-100);
+  }
 
-.tags{
+  .container {
+    width: min(1200px, 90%);
+    margin: auto;
+  }
 
-display:flex;
 
-flex-wrap:wrap;
-
-gap:.5rem;
-
-margin-bottom:1.5rem;
-
+  .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-5);
 }
+  .cta {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--space-6);
+  }
 
-
-.tags span{
-
-padding:.35rem .75rem;
-
-border-radius:999px;
-
-background:var(--slate-100);
-
-color:var(--slate-600);
-
-font-size:var(--text-xs);
-
-font-weight:var(--weight-medium);
-
-}
-
+  @media (max-width: 900px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
