@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import Card from "./Card.astro";
 
 interface Props {
@@ -8,14 +7,22 @@ interface Props {
   summary: string;
   href: string;
   tags?: string[];
-  cover?: ImageMetadata;
+  cover?: string;
 }
 
 const { category, title, summary, href, tags = [], cover } = Astro.props;
 ---
 
 <Card>
-  {cover && <Image src={cover} alt={title} class="cover" width={480} height={300} />}
+  
+  {cover && (
+  <img
+    src={cover}
+    alt={title}
+    class="cover"
+    loading="lazy"
+  />
+)}
 
   <p class="company">{category}</p>
 

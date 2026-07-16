@@ -4,18 +4,20 @@ import { glob } from "astro/loaders";
 
 const blog = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
-  schema: ({ image }) => z.object({
-    title: z.string(),
-    description: z.string(),
-    date: z.date(),
-    author: z.string().default("Adaku Okirie"),
-    category: z.string(),
-    tags: z.array(z.string()),
-    cover: image().optional(),
-    featured: z.boolean().default(false),
-    draft: z.boolean().default(false),
-    readingTime: z.string().optional(),
-  }),
+    schema: ({ image }) => z.object({
+      title: z.string(),
+      description: z.string(),
+      date: z.date(),
+      author: z.string().default("Adaku Okirie"),
+      category: z.string(),
+      tags: z.array(z.string()),
+      cover: z.string().optional(),
+      featured: z.boolean().default(false),
+      draft: z.boolean().default(false),
+      readingTime: z.string().optional(),
+    }),
 });
 
 export const collections = { blog };
+
+// content.config.ts
