@@ -1,5 +1,31 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
+import { defineCollection, z } from "astro:content";
 
-// https://astro.build/config
-export default defineConfig({});
+
+const blog = defineCollection({
+
+  type:"content",
+
+  schema:z.object({
+
+    title:z.string(),
+
+    description:z.string(),
+
+    date:z.date(),
+
+    tags:z.array(z.string()),
+
+    cover:z.string().optional(),
+
+    featured:z.boolean().default(false)
+
+  })
+
+});
+
+
+export const collections = {
+
+  blog
+
+};

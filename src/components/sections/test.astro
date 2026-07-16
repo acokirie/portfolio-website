@@ -1,0 +1,151 @@
+---
+import SectionHeader from "../ui/SectionHeader.astro";
+import CaseStudyCard from "../ui/CaseStudyCard.astro";
+import Button from "../ui/Button.astro";
+
+
+const caseStudies = [
+
+{
+ company:"Amazon",
+ title:"Fulfillment Network Optimization",
+ summary:
+ "Operational throughput improvement via identifying process bottlenecks, optimizing workflows, and implementing performance mechanisms at a high-volume fulfillment environment.",
+ metrics:[
+  "Enterprise Operations",
+  "50+ Associates",
+  "Process Optimization"
+ ],
+ href:"/portfolio/amazon-fulfillment"
+},
+
+
+{
+ company:"Lowe's",
+ title:"Transportation Performance Improvement",
+ summary:
+ "Reduction of risk through improvement of transportation workflows, KPI governance, and carrier performance management across various regions.",
+ metrics:[
+  "Transportation",
+  "120+ Associates",
+  "KPI Governance"
+ ],
+ href:"/portfolio/lowes-transportation"
+},
+
+
+{
+ company:"Walmart",
+ title:"Supply Chain Operations Excellence",
+ summary:
+ "Operational improvements through cross-functional leadership, process standardization, and data-driven execution.",
+ metrics:[
+  "Supply Chain",
+  "Operational Excellence",
+  "Continuous Improvement"
+ ],
+ href:"/portfolio/walmart-operations"
+}
+
+];
+
+---
+
+<section class="featured-case-studies">
+
+
+<div class="container">
+
+
+<SectionHeader
+ title="Featured Case Studies"
+ description="Enterprise programs focused on operational excellence, supply chain transformation, and scalable execution."
+ align="center"
+/>
+
+
+
+<div class="grid">
+
+{
+caseStudies.map((study)=>(
+<CaseStudyCard {...study}/>
+))
+}
+
+</div>
+
+
+<div class="cta">
+    <Button href="/portfolio" variant="tertiary">
+        View All Case Studies →
+    </Button>
+  </div>
+
+</div>
+
+
+
+</section>
+
+
+
+<style>
+
+
+.featured-case-studies{
+
+padding:var(--space-8) 0;
+
+background:var(--slate-100);
+
+}
+
+
+.container{
+
+width:min(1200px,90%);
+
+margin:auto;
+
+}
+
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:var(--space-5);
+
+}
+
+
+
+.cta{
+
+display:flex;
+
+justify-content:center;
+
+margin-top:var(--space-6);
+
+}
+
+
+
+/* Tablet */
+
+@media(max-width:900px){
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+
+</style>
