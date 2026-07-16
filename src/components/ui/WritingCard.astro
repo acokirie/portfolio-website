@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Card from "./Card.astro";
 
 interface Props {
@@ -7,14 +8,14 @@ interface Props {
   summary: string;
   href: string;
   tags?: string[];
-  cover?: string;
+  cover?: ImageMetadata;
 }
 
 const { category, title, summary, href, tags = [], cover } = Astro.props;
 ---
 
 <Card>
-  {cover && <img src={cover} alt={title} class="cover" />}
+  {cover && <Image src={cover} alt={title} class="cover" width={480} height={300} />}
 
   <p class="company">{category}</p>
 
@@ -34,7 +35,7 @@ const { category, title, summary, href, tags = [], cover } = Astro.props;
 </Card>
 
 <style>
-  
+
   .cover {
   width: calc(100% + var(--space-4) * 2);
   aspect-ratio: 16 / 10;

@@ -15,7 +15,7 @@ tags:
   - Technical Program Management
   - Enterprise Operations
 
-cover: "../../images/blog/ai/cover.jpg"
+cover: "/images/blog/leadership/project-management-photo.jpg"
 
 featured: true
 
