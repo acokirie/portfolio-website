@@ -3,21 +3,29 @@ import { defineCollection, z } from "astro:content";
 
 const blog = defineCollection({
 
-  type:"content",
+  type: "content",
 
-  schema:z.object({
+  schema: z.object({
 
-    title:z.string(),
+    title: z.string(),
 
-    description:z.string(),
+    description: z.string(),
 
-    date:z.date(),
+    date: z.date(),
 
-    tags:z.array(z.string()),
+    author: z.string().default("Adaku Okirie"),
 
-    cover:z.string().optional(),
+    category: z.string(),
 
-    featured:z.boolean().default(false)
+    tags: z.array(z.string()),
+
+    cover: z.string().optional(),
+
+    featured: z.boolean().default(false),
+
+    draft: z.boolean().default(false),
+
+    readingTime: z.string().optional(),
 
   })
 
@@ -26,6 +34,6 @@ const blog = defineCollection({
 
 export const collections = {
 
-  blog
+  blog,
 
 };

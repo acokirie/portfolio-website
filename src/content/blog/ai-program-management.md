@@ -1,7 +1,7 @@
 ---
 title: AI Won't Replace Program Managers
 
-description: My perspective after leading AI initiatives.
+description: AI won't replace program Managers at all.
 
 date: 2026-07-03
 

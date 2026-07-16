@@ -20,3 +20,51 @@ const featuredPosts = posts
 .slice(0,3);
 
 ---
+
+<div class="grid">
+
+
+{
+featuredPosts.map((post)=>(
+
+<Card>
+
+
+<p class="category">
+
+{post.data.tags[0]}
+
+</p>
+
+
+<h3>
+
+{post.data.title}
+
+</h3>
+
+
+<p class="summary">
+
+{post.data.description}
+
+</p>
+
+
+<a 
+href={`/writing/${post.slug}`}
+class="link"
+>
+
+Read Article →
+
+</a>
+
+
+</Card>
+
+))
+}
+
+
+</div>
