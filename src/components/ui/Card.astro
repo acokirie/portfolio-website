@@ -17,11 +17,14 @@ const {
 
 .card {
 
+  display:flex;
+  flex-direction:column; /* Pushes the CTA to the Bottom */
+
   padding:var(--space-4);
 
   background:var(--white);
 
-  border:1px solid var(--border);
+  border:1px solid var(--card-color, var(--border));
 
   border-radius:var(--radius-lg);
 
@@ -42,7 +45,7 @@ const {
 
   box-shadow:var(--shadow-lg);
 
-  border-color:var(--color-suit-mustard);
+  border-color:var(--card-color-hover, var(--border));
 
 }
 

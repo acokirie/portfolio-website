@@ -81,6 +81,33 @@
      Gradients
   =========================== */
 
+  /* ===========================
+   Gradients
+=========================== */
+
+--gradient-blue:
+  linear-gradient(
+    135deg,
+    #2563EB,
+    #0EA5E9
+  );
+
+
+--gradient-mustard:
+  linear-gradient(
+    135deg,
+    #E18C1C,
+    #F5B256
+  );
+
+
+--gradient-white:
+  linear-gradient(
+    135deg,
+    #FFFFFF,
+    #F8FAFC
+  );
+
   --gradient-primary:
     linear-gradient(
       135deg,

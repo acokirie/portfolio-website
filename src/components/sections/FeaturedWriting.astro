@@ -1,107 +1,22 @@
 ---
-import Container from "../ui/Container.astro";
+import { getCollection } from "astro:content";
+
 import SectionHeader from "../ui/SectionHeader.astro";
+import Card from "../ui/Card.astro";
+import Button from "../ui/Button.astro";
+
+
+const posts = await getCollection("blog", ({data}) => {
+
+  return data.featured === true;
+
+});
+
+
+const featuredPosts = posts
+.sort(
+(a,b)=>b.data.date.valueOf()-a.data.date.valueOf()
+)
+.slice(0,3);
+
 ---
-
-<Container>
-
-<section class="writing">
-
-    <SectionHeader
-        eyebrow="Writing"
-        title="Ideas on Program Management, AI & Operations"
-        description="A growing library of practical lessons from enterprise delivery, technical leadership, and operational excellence."
-    />
-
-    <div class="cards">
-
-        <article class="card">
-
-            <h3>How I Think About AI</h3>
-
-            <p>
-                Why AI Program Managers should think like systems designers
-                instead of feature managers.
-            </p>
-
-            <a href="/writing">
-                Read Article →
-            </a>
-
-        </article>
-
-        <article class="card">
-
-            <h3>Transportation Program Management</h3>
-
-            <p>
-                Lessons learned scaling transportation operations inside
-                Fortune 500 organizations.
-            </p>
-
-            <a href="/writing">
-                Read Article →
-            </a>
-
-        </article>
-
-    </div>
-
-</section>
-
-</Container>
-
-<style>
-
-.writing{
-
-padding:6rem 0;
-
-}
-
-.cards{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:2rem;
-margin-top:3rem;
-
-}
-
-.card{
-
-padding:2rem;
-border:1px solid var(--border);
-border-radius:16px;
-background:white;
-
-transition:.2s;
-
-}
-
-.card:hover{
-
-transform:translateY(-4px);
-
-}
-
-.card h3{
-
-margin-bottom:1rem;
-
-}
-
-.card p{
-
-margin-bottom:1.5rem;
-line-height:1.6;
-
-}
-
-.card a{
-
-font-weight:600;
-
-}
-
-</style>
