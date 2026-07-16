@@ -7,7 +7,7 @@ date: 2026-07-16
 
 author: "Adaku Okirie"
 
-category: "Transportation"
+category: "Supply Chain"
 
 tags:
   - Transportation
@@ -16,7 +16,7 @@ tags:
   - Operations
   - Leadership
 
-cover: "/images/blog/transportation/transportation-program-management.jpg"
+cover: "/images/blog/supply-chain/building-reliable-systems.jpg"
 
 featured: true
 

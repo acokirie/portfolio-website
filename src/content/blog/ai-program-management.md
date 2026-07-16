@@ -15,7 +15,7 @@ tags:
   - Technical Program Management
   - Program Management
 
-cover: "/images/blog/ai/ai-wont-replace-program-managers.jpg"
+cover: "/images/blog/ai/woman-talking-at-whiteboard-conference-room.jpg"
 
 featured: true
 

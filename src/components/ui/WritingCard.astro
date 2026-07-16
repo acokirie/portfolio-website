@@ -13,8 +13,8 @@ interface Props {
 const { category, title, summary, href, tags = [], cover } = Astro.props;
 ---
 
-<Card>
-  
+<Card >
+
   {cover && (
   <img
     src={cover}
@@ -64,7 +64,7 @@ const { category, title, summary, href, tags = [], cover } = Astro.props;
 
   h3 {
     margin: .75rem 0 1rem;
-    color: var(--blue);
+    color: var(--color-suit-mustard-dark);
     font-size: 1.5rem;
     line-height: 1.3;
   }
@@ -95,7 +95,7 @@ const { category, title, summary, href, tags = [], cover } = Astro.props;
     display: inline-flex;
     align-items: center;
     margin-top: auto;
-    color: var(--blue);
+    color: var(--color-suit-mustard-dark);
     font-weight: var(--weight-semibold);
   }
 
