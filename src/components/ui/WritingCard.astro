@@ -34,15 +34,16 @@ const { category, title, summary, href, tags = [], cover } = Astro.props;
 </Card>
 
 <style>
+  
   .cover {
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-    border-radius: var(--radius-md);
-    margin: calc(var(--space-4) * -1) calc(var(--space-4) * -1) var(--space-3);
-    width: calc(100% + var(--space-4) * 2);
-    max-width: none;
-  }
+  width: calc(100% + var(--space-4) * 2);
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin: calc(var(--space-4) * -1) calc(var(--space-4) * -1) var(--space-3);
+  max-width: none;
+  flex-shrink: 0; /* prevents flexbox from squishing it when text content varies in length */
+}
 
   .company {
     margin: 0;
